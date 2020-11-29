@@ -11,6 +11,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+
 set(STM32CUBEMX_GENERATED_FILES
 
         Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c
@@ -31,25 +32,13 @@ set(STM32CUBEMX_GENERATED_FILES
         Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd_ex.c
         Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_can.c
         Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_usb.c
-
-        Core/Inc/main.h
-        Core/Inc/stm32f3xx_hal_conf.h
-        Core/Inc/stm32f3xx_it.h
-        Core/Inc/gpio.h
-        Core/Inc/usart.h
-
-        Core/Src/main.cpp
-        Core/Src/stm32f3xx_hal_msp.c
-        Core/Src/stm32f3xx_it.c
-        Core/Src/system_stm32f3xx.c
-        Core/Src/gpio.c
-        Core/Src/usart.c
-
         startup_stm32f303xe.s
-        )
+)
 
-set(SOURCES
-        # Add user-created source files to this variable
+file(GLOB_RECURSE SOURCES
+        Core/Src/*.c
+        Core/Src/*.cpp
+        ../../Subsurface/Node/Common/Peripherals/Src/*.cpp
 )
 
 set(EXECUTABLE ${PROJECT_NAME}.out)
