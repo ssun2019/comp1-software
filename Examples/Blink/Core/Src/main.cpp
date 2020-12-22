@@ -22,6 +22,9 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include <iostream>
+#include "PWMInterface.h"
+#include "PWMManager.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -66,6 +69,30 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+  
+/*
+  int terminate = 0;
+
+  // Press Enter 1 to terminate the PWM Test!
+  while (terminate != 1)
+  {
+    std::cout << "Enter a '1' to terminate the testing loop!" << std::endl;
+    std::cin >> terminate;
+    std::cout << "You enterred: " << terminate << "." << std::endl;
+
+    for (int i = 0; i < 100; ++i)
+    {
+      PWMManager::updateInterface();
+    }
+
+    for (int j = 100; j > 0; --j)
+    {
+      PWMManager::PWMStart();
+      PWMManager::PWMStop();
+    }
+
+  }
+*/
 
   /* USER CODE END 1 */
 
